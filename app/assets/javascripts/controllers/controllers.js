@@ -3,19 +3,34 @@ var indexCtrl = contactList.controller('indexCtrl', function($scope, contactData
   $scope.formContactName = '';
   $scope.formContactPhone = '';
   $scope.formContactEmail = '';
+  $scope.editing = false
   contactData.loadContacts();
 
   $scope.submitForm = function() {
-    contactData.addContact(
-      {
-        contact: {
-          name: $scope.formContactName, phone: $scope.formContactPhone, email: $scope.formContactEmail
+    if($scope.editing == false){
+      contactData.addContact(
+        {
+          contact: {
+            name: $scope.formContactName, phone: $scope.formContactPhone, email: $scope.formContactEmail
+          }
         }
-      }
-    );
-    $scope.formContactName = '';
-    $scope.formContactPhone = '';
-    $scope.formContactEmail = '';
+      );
+      $scope.formContactName = '';
+      $scope.formContactPhone = '';
+      $scope.formContactEmail = '';
+  } else if($scope.editing == true){
+      contactData.updateContact(
+        {
+          contact: {
+            id: $scope.formContactId , name: $scope.formContactName, phone: $scope.formContactPhone, email: $scope.formContactEmail
+          }
+        }
+      );
+      $scope.formContactName = '';
+      $scope.formContactPhone = '';
+      $scope.formContactEmail = '';
+      $scope.editing = false
+  }
   };
 
   $scope.deleteContact = function(contactId) {
@@ -23,22 +38,12 @@ var indexCtrl = contactList.controller('indexCtrl', function($scope, contactData
   };
 
   $scope.editContact = function(contact) {
+    $scope.editing = true
     $scope.formContactName = contact.name
     $scope.formContactPhone = contact.phone
     $scope.formContactEmail = contact.email
+    $scope.formContactId = contact.id
     // console.log(contact)
-    $scope.submitForm = function() {
-      contactData.updateContact(
-        {
-          contact: {
-            id: contact.id , name: $scope.formContactName, phone: $scope.formContactPhone, email: $scope.formContactEmail
-          }
-        }
-      );
-      $scope.formContactName = '';
-      $scope.formContactPhone = '';
-      $scope.formContactEmail = '';
-    }
   };
   
 });
