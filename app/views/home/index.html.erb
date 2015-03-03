@@ -1,0 +1,22 @@
+<h1>Contact List</h1>
+<div ng-controller="indexCtrl">
+  <ul>
+    <li ng-repeat="contact in contacts.contacts">
+      {{ contact.name }} - {{ contact.phone }} - {{ contact.email }}
+      <button ng-click="editContact(contact)">Edit</button>
+      <button ng-click="deleteContact(contact.id)">Delete</button>
+    </li>
+  </ul>
+  <form ng-submit="submitForm()">
+    <label>Name:</label>
+    <input type="text", placeholder="Name", ng-model="formContactName">
+    <br>
+    <label>Phone Number:</label>
+    <input type="text", placeholder="Phone Number", ng-model="formContactPhone">
+    <br>
+    <label>E-Mail:</label>
+    <input type="text", placeholder="E-Mail", ng-model="formContactEmail">
+    <br>
+    <input type="submit">
+  </form>
+</div>
