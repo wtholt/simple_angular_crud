@@ -1,34 +1,59 @@
-<div class="col-md-4 col-md-offset-4">
-<h1>Contact List</h1>
-</div>
 <div ng-controller="indexCtrl">
-  <div class="col-md-6">
-  <ul>
-    <li ng-repeat="contact in contacts.contacts" class="list-unstyled">
-      <label>Name</label> {{ contact.name }} 
-      <br>
-      <label>Phone Number</label> {{ contact.phone }} 
-      <br>
-      <label>E-Mail</label> {{ contact.email }}
-      <br>
-      <button class="btn btn-warning" ng-click="editContact(contact)">Edit</button>
-      <button class="btn btn-danger" ng-click="deleteContact(contact.id)">Delete</button>
-    </li>
-  </ul>
+  <div class="left">
+    <div class="col-md-6" id="left">
+      <h1>Add/Edit Contacts</h1>
+      <form ng-submit="submitForm()">
+        <label>Name</label>
+        <input type="text", placeholder="Name...", ng-model="formContactName" class="form-control">
+        <br>
+        <label>Phone Number</label>
+        <input type="text", placeholder="Phone Number...", ng-model="formContactPhone" class="form-control">
+        <br>
+        <label>E-Mail</label>
+        <input type="text", placeholder="E-Mail...", ng-model="formContactEmail" class="form-control">
+        <br>
+        <input type="submit" class="btn btn-success">
+        <!-- <span><button></button></span> -->
+      </form>
+      <h1>Your Contacts</h1>
+      <ul>
+      <li ng-repeat="contact in contacts.contacts" class="list-group list-unstyled">
+        <label>Name</label> {{ contact.name }} 
+        <br>
+        <label>Phone Number</label> {{ contact.phone }} 
+        <br>
+        <label>E-Mail</label> {{ contact.email }}
+        <br>
+        <button class="btn btn-warning btn-sm" ng-click="editContact(contact)">Edit</button>
+        <button class="btn btn-danger btn-sm" ng-click="deleteContact(contact.id)">Delete</button>
+      </li>
+    </ul>
   </div>
-  <div class="col-md-4 col-md-offset-1">
-  <form ng-submit="submitForm()">
-    <label>Name</label>
-    <input type="text", placeholder="Name...", ng-model="formContactName" class="form-control">
-    <br>
-    <label>Phone Number</label>
-    <input type="text", placeholder="Phone Number...", ng-model="formContactPhone" class="form-control">
-    <br>
-    <label>E-Mail</label>
-    <input type="text", placeholder="E-Mail...", ng-model="formContactEmail" class="form-control">
-    <br>
-    <input type="submit" class="btn btn-success">
-    <!-- <span><button></button></span> -->
-  </form>
+</div>
+  <div class="col-md-6" id="right">
+    <h1 class="text-center">Contacts made Simple</h1>
+    <div class="jumbotron-contact"></div>
+    <h3 class="text-center">Let us do the organizing.</h3>
+    <h4>Why?</h3>
+    <ul>
+      <li>
+        <h3>Efficient</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </li>
+        <li>
+        <h3>Save Time</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </li>
+    </ul>
   </div>
 </div>

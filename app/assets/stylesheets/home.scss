@@ -1,3 +1,39 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.col-md-6 {
+  min-height: 100%;
+}
+
+#left {
+  background-color: #22a301;
+  color: #fff;
+}
+
+#right {
+  color: #22a301;
+}
+
+.jumbotron-contact {
+  background-image: url("contacts.jpg");
+  background-image: no-repeat;
+  background-size: cover;
+  background-position: 100% 55%;
+  padding: 125px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eee;
+  border-radius: 10px;
+}
