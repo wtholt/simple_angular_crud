@@ -24,8 +24,8 @@
         <br>
         <label>E-Mail - </label> {{ contact.email }}
         <br>
-        <button class="btn btn-warning btn-sm" ng-click="editContact(contact)">Edit</button>
-        <button class="btn btn-danger btn-sm" ng-click="deleteContact(contact.id)">Delete</button>
+        <span class="glyphicon glyphicon-wrench" ng-click="editContact(contact)"></span>
+        <span class="glyphicon glyphicon-trash" ng-click="deleteContact(contact.id)"></span>
       </li>
     </ul>
     <br>
