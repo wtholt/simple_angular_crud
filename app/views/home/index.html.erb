@@ -16,8 +16,8 @@
         <!-- <span><button></button></span> -->
       </form>
       <h1>Your Contacts</h1>
-      <ul>
-      <li ng-repeat="contact in contacts.contacts" class="list-group list-unstyled">
+      <ul class="list-group">
+      <li ng-repeat="contact in contacts.contacts" class="list-group-item">
         <label>Name - </label> {{ contact.name }} 
         <br>
         <label>Phone Number - </label> {{ contact.phone }} 

@@ -41,3 +41,15 @@ h1 {
 .glyphicon.glyphicon-trash {
   color: #d9534f;
 }
+
+.list-group-item.active > .badge,
+.nav-pills > .active > a > .badge {
+  color: #337ab7;
+  background-color: #22a301;
+}
+
+.list-group-item {
+  background-color: #22a301;
+  border-left: none;
+  border-right: none;
+}
