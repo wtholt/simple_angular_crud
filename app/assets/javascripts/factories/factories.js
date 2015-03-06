@@ -1,4 +1,4 @@
-contactList.factory('contactData',['$http' function($http) {
+contactList.factory('contactData',['$http', function($http) {
   contactData = {
     data: {
       contacts: [
