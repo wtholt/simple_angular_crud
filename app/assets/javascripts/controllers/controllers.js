@@ -1,4 +1,4 @@
-var indexCtrl = contactList.controller('indexCtrl', function($scope, contactData){
+var indexCtrl = contactList.controller('indexCtrl',['$scope', 'contactData', function($scope, contactData){
   $scope.contacts = contactData.data;
   $scope.formContactName = '';
   $scope.formContactPhone = '';
@@ -46,4 +46,4 @@ var indexCtrl = contactList.controller('indexCtrl', function($scope, contactData
     // console.log(contact)
   };
   
-});
+}]);

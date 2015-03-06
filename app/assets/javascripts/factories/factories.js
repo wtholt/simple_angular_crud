@@ -1,4 +1,4 @@
-contactList.factory('contactData', function($http) {
+contactList.factory('contactData',['$http' function($http) {
   contactData = {
     data: {
       contacts: [
@@ -48,4 +48,4 @@ contactList.factory('contactData', function($http) {
   }
 
   return contactData;
-});
+}]);
